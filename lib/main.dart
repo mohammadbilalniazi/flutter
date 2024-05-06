@@ -68,7 +68,9 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
   void _decrementCounter(){
-    setState((){_counter--;});
+    setState((){
+      _counter--;
+    });
   }
 
   @override
@@ -109,8 +111,9 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'You have pushed the button this many times:',
+              'You have pushed the button this many times:'
             ),
+            Text('Testing Text'),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
@@ -123,16 +126,18 @@ class _MyHomePageState extends State<MyHomePage> {
       //   tooltip: 'Increment',
       //   child: const Icon(Icons.add),
       // ),
-        floatingActionButton: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      floatingActionButton: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
             FloatingActionButton( // first FAB to perform decrement
               onPressed: _decrementCounter,
               child: Icon(Icons.delete),
+                tooltip: 'Increment'
             ),
             FloatingActionButton( // second FAB to perform increment
               onPressed: _incrementCounter,
               child: Icon(Icons.add),
+              tooltip:'Decrement'
             ),
           ],
         )
